@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+<Resource name="primaryresourcename"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              url="jdbc:oracle:thin:@192.168.1.19:1521:orcl"
+              username="sys as sysdba"
+              password="Admin#123"
+              maxTotal="50"
+              maxIdle="10"
+			  minIdle="2"
+              maxWaitMillis="3000"
+			  removeAbandonedOnBorrow ="true"
+			  removeAbandonedTimeout="60"
+    />	
+<Resource name="backupresourcename"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              url="jdbc:oracle:thin:@vmbdeanfy01104:1521:GENESYSIXN"
+              username="GENOWNER"
+              password="ejiva"
+              maxTotal="50"
+              maxIdle="10"
+			  minIdle="2"
+              maxWaitMillis="3000"
+			  removeAbandonedOnBorrow ="true"
+			  removeAbandonedTimeout="60"
+    />			
+</Context>

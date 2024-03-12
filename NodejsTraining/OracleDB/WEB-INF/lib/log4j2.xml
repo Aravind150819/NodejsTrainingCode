@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config" 
+	status="warn" packages="com.genesyslab.studio.backendlogic">
+	<Appenders>
+		<RollingFile name="fileLogger" fileName="${sys:catalina.home}/logs/composer.log" filePattern="${sys:catalina.home}/logs/composer-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %spi%n</pattern>
+            </PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="250 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %spi%n" />
+        </Console>
+	</Appenders>
+	
+	<Loggers>
+		<Logger name="RESTProxy" level="ERROR" >
+            <appender-ref ref="fileLogger" />
+        </Logger>
+		<Logger name="getWebRequest" level="ERROR" >
+            <appender-ref ref="fileLogger" />
+        </Logger>
+		<Logger name="getWebService" level="ERROR" >
+            <appender-ref ref="fileLogger" />
+        </Logger>
+		<Logger name="dbRequest" level="ERROR" >
+            <appender-ref ref="fileLogger" />
+        </Logger>
+		<Logger name="dbInputForm" level="ERROR" >
+            <appender-ref ref="fileLogger" />
+        </Logger>
+		<Logger name="recordCapture" level="ERROR" >
+            <appender-ref ref="fileLogger" />
+        </Logger>
+		<Logger name="backEnd" level="ERROR" >
+            <appender-ref ref="fileLogger" />
+        </Logger>
+		<Root level="ERROR">
+			<AppenderRef ref="STDOUT"/>
+		</Root>
+	</Loggers>
+</Configuration>

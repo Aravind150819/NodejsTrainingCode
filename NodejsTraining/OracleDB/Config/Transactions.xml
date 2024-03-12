@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TransactionList>
+		<ResourceConfig name="DBConfig">
+		<!-- <RESOURCENAME> element value is referred as context resource name(context.xml) for loading that corresponding resource context object-->
+			<PRMRESOURCENAME>primaryresourcename</PRMRESOURCENAME>
+			<BKPRESOURCENAME>backupresourcename</BKPRESOURCENAME>
+			<QUERYFILELOC>C:/Program Files/Apache Software Foundation/Tomcat 9.0/webapps/OracleDB/Scripts/</QUERYFILELOC>
+		</ResourceConfig>
+		<QueryInfo name="StationCheck">
+			<RESOURCEREFERENCE>DBConfig</RESOURCEREFERENCE>
+			<REQUESTINPUT>1</REQUESTINPUT>
+			<SQLFILE>StationNumberCheck.sql</SQLFILE>
+			<MASK></MASK>
+		</QueryInfo>
+		<ProcedureInfo name="InsertCallInfo">
+			<RESOURCEREFERENCE>DBConfig</RESOURCEREFERENCE>
+            <RETURNCURSOR>no</RETURNCURSOR>
+            <REQUESTINPUT>3</REQUESTINPUT>
+            <REQUESTOUTPUT>0</REQUESTOUTPUT>
+			<REQUESTORDER>in,in,in</REQUESTORDER>
+			<SQLFILE>InsertCallInfo.sql</SQLFILE>
+			<MASK></MASK> 
+        </ProcedureInfo>
+</TransactionList>
